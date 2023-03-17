@@ -52,11 +52,13 @@ function play(){
     let bombsCounter = genBombs(numBombs,cellNumbers);
     
     
-    for (i = 0; i < cellNumbers; i++){
+    
+    for (i = 1; i <= cellNumbers; i++){
         const cell = drawCell(i, cellPerRow);
         cell.addEventListener('click', function(){
-            // Stucked here, need to know how to select bombsCounter array element and cell i
-            if (bombsCounter === cellNumbers){
+            let cellValue = parseInt(cell.innerText);
+
+            if (bombsCounter.includes(cellValue)){
                 cell.classList.add('bomb')
             }else{
                 cell.classList.add('safe')
@@ -66,7 +68,7 @@ function play(){
         playground.appendChild(cell);
     }
     
-    console.log(bombsCounter);
+    
 }
 
 
@@ -75,9 +77,10 @@ function genBombs(numBombs, cellNumbers){
     const bombs = [];
     while (bombs.length < numBombs) {
        const bomb = rndNumber (1, cellNumbers)
-        if (bombs.indexOf(bomb) === -1){
+        if (!bombs.includes(bomb)){
             bombs.push(bomb);
         }
     }
     return bombs;
 }
+
