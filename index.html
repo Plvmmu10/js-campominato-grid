@@ -16,7 +16,7 @@
 <body>
     <!-- Header  -->
     <header>
-        <div class="header-wrapper w-100 p-3 d-flex align-items-center text-white">
+        <div class="header-wrapper w-100 p-3 d-flex align-items-center text-white justify-content-around">
             <!-- Title div -->
             <div class="fst-italic text-decoration-underline">
                 <!-- Bomb img -->
@@ -24,7 +24,7 @@
             </div>
 
             <!-- Form div where you can select difficulty and start playing -->
-
+            <div>
                 <label for="difficulty">Scegli la difficoltà</label>
                 <select name="difficulty" id="difficultySelect">
                     <option value="easy">Facile</option>
@@ -35,6 +35,8 @@
                 </select>
 
                 <button id="playBtn" class="btn btn-success">Gioca</button>
+            </div>
+                
 
         </div>
     </header>
@@ -46,8 +48,8 @@
                 
             </div>
 
-            <div class="score mt-3">
-                
+            <div id="score" class="mt-3 fst-italic">
+                <h3>Seleziona la difficoltà e clicca play</h3>
             </div>
         </div>
     </main>
